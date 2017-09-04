@@ -1,6 +1,5 @@
 // Karma configuration
-// Generated on Sun Sep 03 2017 21:14:20 GMT+0300 (+03)
-
+// Generated on Mon Sep 04 2017 18:39:45 GMT+0300 (+03)
 
 module.exports = function(config) {
   config.set({
@@ -8,46 +7,30 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
-
     // list of files / patterns to load in the browser
     files: [
-        'js/**/*.js',
-        'libs/**/*.js',
-        'spec/testSpec.js',
-        {
-            pattern: '*.json',
-            served: true,
-            included: false
-        }
+        'lib/**/*.js',
+        'spec/helpers/**/*.js',
+        'spec/**/*Spec.js',
     ],
+
 
     // list of files to exclude
     exclude: [
-
     ],
-    //http://www.syntaxsuccess.com/viewarticle/writing-jasmine-unit-tests-in-es6
+
+
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-      preprocessors: {
-          'js/**/*.js': ['webpack'],
-          'spec/testSpec.js': ['webpack'],
-      },
-      webpack: {
-          module: {
-              loaders: [
-                  { test: /\.js/, exclude: /node_modules/, loader: 'babel-loader' }
-              ]
-          },
-          watch: true
-      },
-      webpackServer: {
-          noInfo: true
-      },
+    preprocessors: {
+        'lib/**/*.js': ['webpack'],
+        'spec/**/*Spec.js': ['webpack']
+    },
+
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
