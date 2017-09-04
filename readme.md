@@ -1,0 +1,2 @@
+
+    karma start --single-run

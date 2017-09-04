@@ -1,0 +1,22 @@
+{
+  "name": "jasminetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-webpack": "^2.0.4",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "test": "karma start >/dev/null & sleep 5 && karma run && ps -ef | grep karma | grep -v grep | awk '{print $2}' | xargs kill -9"
+  },
+  "author": "",
+  "license": "ISC"
+}
